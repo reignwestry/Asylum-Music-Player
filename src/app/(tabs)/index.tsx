@@ -1,4 +1,4 @@
-import { Text, View, Pressable, Image, StyleSheet } from "react-native";
+import {  View,  StyleSheet } from "react-native";
 
 
 
