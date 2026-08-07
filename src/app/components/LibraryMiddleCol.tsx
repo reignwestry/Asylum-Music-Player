@@ -1,57 +1,80 @@
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
+
+const DataImg = require('@/assets/dumby/micheal-jackson-bad.png');
+
+// const DATA = [
+//   {
+//     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+//     img: {DataImg},
+//     title: "First Item",
+//   },
+//   {
+//     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+//     title: "Second Item",
+//   },
+//   {
+//     id: "58694a0f-3da1-471f-bd96-145571e29d72",
+//     title: "Third Item",
+//   },
+// ];
+
+type DataProps = {
+    id: any,
+    img: string,
+    title: string,
+    artist: string,
+    album: string,
+    DataImg: string,
+
+}
+
+function DataBlock({ id, img, title, artist, album, DataImg}: DataProps) {
+    return (
+      <View style={styles.dataBlock}>
+        <View style={styles.dataImgContainer}>
+          <Image
+            source={require("@/assets/dumby/micheal-jackson-bad.png")}
+            style={styles.dataImg}
+          />
+        </View>
+        <View style={styles.metaDataBlock}></View>
+      </View>
+    );
+};
 
 export default function LibraryMiddleCol(){
     return(
         <View style={styles.middleCol}>
             <Text>Middle Col</Text>
-            <View style={styles.searchBar}>
-                <Text style={styles.searchBarTitle}>Search:</Text>
-                <TextInput style={styles.searchBarInput} placeholder={'Savage'}/>
-            </View>
-            <View style={styles.dataBlock}>
-                <View style=''>
+        <DataBlock />
 
-                </View>
-                <View>
-
-                </View>
-            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    searchBarInput:{
-        color: 'green',
-        backgroundColor: 'darkgrey',
-        fontSize: 14,
-        fontWeight: 500,
-        padding: '1%',
-        width: '85%',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderStyle: 'solid'
+    dataImg: {
+        width: '100%',
+        height: '100%',
     },
-    searchBarTitle:{
-        color: 'yellow',
-        fontSize: 14,
-        fontWeight: 'bold'
-    },
-    searchBar:{
-        backgroundColor: 'black',
-        height: '3%',
-        display: 'flex',
-        flexDirection: 'row'
+    metaDataBlock:{
 
     },
-    dataBlock:{
-        backgroundColor: 'darkgrey',
-        height: '15%',
-        flexDirection: 'row'
+    dataImgContainer:{
+        backgroundColor: 'red',
+        width: '10%',
+        height: '100%'
     },
+  dataBlock: {
+    backgroundColor: "darkgrey",
+    height: "15%",
+    flexDirection: "row",
+  },
+
+
   middleCol: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     width: "95%",
     height: "100%",
     backgroundColor: "teal",
