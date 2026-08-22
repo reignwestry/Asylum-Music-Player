@@ -1,82 +1,71 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import { ScrollView, StyleSheet } from "react-native";
+import DataBlock from "./DataBlock";
 
-const DataImg = require('@/assets/dumby/micheal-jackson-bad.png');
+const DataImg = require("@/assets/dumby/micheal-jackson-bad.png");
 
-// const DATA = [
-//   {
-//     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-//     img: {DataImg},
-//     title: "First Item",
-//   },
-//   {
-//     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-//     title: "Second Item",
-//   },
-//   {
-//     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-//     title: "Third Item",
-//   },
-// ];
+const DATA = [
+  {
+    id: "1",
+    img: { DataImg },
+    title: "First Item",
+    artist: "Micheal Jackson",
+    album: "Bad",
+    genre: "Pop",
+    rating: 3,
+  },
+  {
+    id: "2",
+    img: { DataImg },
+    title: "Second Item",
+    artist: "Micheal Jackson",
+    album: "Bad",
+    genre: "Pop",
+    rating: 2,
+  },
+  {
+    id: "3",
+    img: { DataImg },
+    title: "Third Item",
+    artist: "Micheal Jackson",
+    album: "Bad",
+    genre: "Pop",
+    rating: 5,
+  },
+];
 
-type DataProps = {
-    id: any,
-    img: string,
-    title: string,
-    artist: string,
-    album: string,
-    DataImg: string,
+/* TODO 
+    Grab all metadata
+    Display all track data
+    ADD to playlists
+    Edit tracks
+    remove tracks
+    save all metadata to each track upon update
 
-}
+*/
 
-function DataBlock({ id, img, title, artist, album, DataImg}: DataProps) {
-    return (
-      <View style={styles.dataBlock}>
-        <View style={styles.dataImgContainer}>
-          <Image
-            source={require("@/assets/dumby/micheal-jackson-bad.png")}
-            style={styles.dataImg}
-          />
-        </View>
-        <View style={styles.metaDataBlock}></View>
-      </View>
-    );
-};
-
-export default function LibraryMiddleCol(){
-    return(
-        <View style={styles.middleCol}>
-            <Text>Middle Col</Text>
-        <DataBlock />
-
-        </View>
-    );
+export default function LibraryMiddleCol() {
+  return (
+    <ScrollView style={styles.middleCol}>
+      {DATA.map((track) => (
+        <DataBlock
+          id={track.id}
+          title={track.title}
+          artist={track.artist}
+          album={track.album}
+          genre={track.genre}
+          rating={track.rating}
+        />
+      ))}
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
-    dataImg: {
-        width: '100%',
-        height: '100%',
-    },
-    metaDataBlock:{
-
-    },
-    dataImgContainer:{
-        backgroundColor: 'red',
-        width: '10%',
-        height: '100%'
-    },
-  dataBlock: {
-    backgroundColor: "darkgrey",
-    height: "15%",
-    flexDirection: "row",
-  },
-
-
   middleCol: {
     display: "flex",
     flexDirection: "column",
-    width: "95%",
+    width: "100%",
     height: "100%",
-    backgroundColor: "teal",
+    backgroundColor: "black",
   },
 });
