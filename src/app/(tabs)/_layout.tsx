@@ -1,13 +1,13 @@
 import { FontAwesome } from "@react-native-vector-icons/fontawesome";
 import { Tabs } from "expo-router";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 // ? ICONS
 // const EqualizerIcon = require("@/assets/icons/equalizer   ");
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "blue", headerShown: false }}>
       <Tabs.Screen
         name="index"
         options={{
