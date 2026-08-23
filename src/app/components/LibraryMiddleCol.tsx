@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet } from "react-native";
 import DataBlock from "./DataBlock";
 
-const DataImg = require("@/assets/dumby/micheal-jackson-bad.png");
+import * as DataImg from "@/assets/dumby/micheal-jackson-bad.png";
 
 const DATA = [
   {

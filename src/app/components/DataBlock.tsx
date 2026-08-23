@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import GenreBox from "./GenreBox";
 import RatingBox from "./RatingBox";
 
-const DataImg = require("@/assets/dumby/micheal-jackson-bad.png");
+import * as  DataImg from "@/assets/dumby/micheal-jackson-bad.png";
 type DataProps = {
   id: any;
   img?: string;
@@ -27,6 +27,7 @@ export default function DataBlock({
       <View style={styles.dataImgContainer}>
         <Image
           source={require("@/assets/dumby/micheal-jackson-bad.png")}
+          resizeMode="contain"
           style={styles.dataImg}
         />
       </View>
