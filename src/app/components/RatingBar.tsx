@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet } from "react-native";
 /*
     Rating up to 5 stars or number value
 */
-let RatingScore; // Example rating score
+// let RatingScore; // Example rating score
 const RatingOne = require("@/assets/icons/rating/ratingOne.svg");
 const RatingTwo = require("@/assets/icons/rating/ratingTwo.svg");
 const RatingThree = require("@/assets/icons/rating/ratingThree.svg");
